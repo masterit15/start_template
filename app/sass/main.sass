@@ -1,0 +1,198 @@
+@import 'utils/config'
+
+.wrapper
+  position: relative
+  width: 100%
+  z-index: 20
+.start_wrap
+  position: relative
+  width: 400px
+  height: 400px
+  margin: 0 auto
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+  border-radius: 100%
+  box-shadow: 2px 0 50px rgba(#000,.1)
+  background-attachment: scroll
+  background-size: cover
+  background-position: 42% 50%
+  animation: spin 15s infinite linear
+  .text
+    display: flex
+    justify-content: center
+    align-items: center
+    flex-direction: column
+    width: 100%
+    height: 100%
+    text-align: center
+    font-size: 6rem
+    text-transform: uppercase
+    font-weight: bold
+    background: $NeonGradient
+    background-position: 0px 0px
+    background-attachment: scroll
+    background-size: cover
+    -webkit-text-fill-color: transparent
+    -webkit-background-clip: text
+    animation: bg 12s linear infinite
+    border-radius: 100%
+    span
+      height: 100px
+      text-shadow: 10px 10px 50px rgba(0,0,0,0.1)
+    &::before
+      content: ''
+      position: absolute
+      left: 0
+      top: 0
+      width: 100%
+      height: 100%
+      background: $NeonGradient
+      border-radius: 100%
+      // animation: shadow 10s linear infinite
+      z-index: -1
+  &::before
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background: #fe01b1
+    background: $NeonGradient
+    filter: blur(30px)
+    background-position: 0px 0px
+    border-radius: 100%
+    animation: shadow 15s linear infinite
+    z-index: -1
+  &:after
+    content: ''
+    position: absolute
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background: #fe01b1
+    background: $NeonGradient
+    filter: blur(1px)
+    background-position: 0px 0px
+    border-radius: 100%
+    animation: shadow 15s linear infinite
+    z-index: -1
+@keyframes spin
+  to
+    transform: rotate(360deg)
+    
+@keyframes shadow
+	0%
+    filter: blur(30px)
+    background-position: 0px 0px
+	50%
+    filter: blur(60px)
+    background-position: 800px 800px
+	100%
+    filter: blur(30px)
+    background-position: 0px 0px
+@keyframes bg
+	0%
+    background-position: 0px 0px
+	50%
+    background-position: 800px 800px
+	100%
+    background-position: 0px 0px
+
+.main
+  display: flex
+  justify-content: center
+  position: relative
+  gap: 30px
+  width: 100%
+  height: auto
+  font-family: $Neon
+  font-size: 6rem
+  text-align: left
+  white-space: nowrap
+  span
+    display: block
+    position: relative
+    -webkit-transform: translateZ(0) translate3D(0, 0, 0)
+    transform: translateZ(0) translate3D(0, 0, 0)
+    -webkit-backface-visibility: hidden
+    backface-visibility: hidden
+    will-change: opacity
+  .webdev
+    color: #ffd9e2
+    text-shadow: 0 0 0 transparent, 0 0 10px #ff003c, 0 0 20px rgba(255, 0, 60, 0.5), 0 0 40px #ff003c, 0 0 100px #ff003c, 0 0 200px #ff003c, 0 0 300px #ff003c, 0 0 500px #ff003c, 0 0 1000px #ff003c
+    -webkit-animation: blink 4s infinite alternate
+    animation: blink 4s infinite alternate
+  .socod
+    color: #d4eaff
+    text-shadow: 0 0 0 transparent, 0 0 10px #2695ff, 0 0 20px rgba(38, 149, 255, 0.5), 0 0 40px #2695ff, 0 0 100px #2695ff, 0 0 200px #2695ff, 0 0 300px #2695ff, 0 0 500px #2695ff
+    -webkit-animation: buzz 0.01s infinite alternate
+    animation: buzz 0.01s infinite alternate
+@-webkit-keyframes buzz
+  70%
+    opacity: 0.80
+@keyframes buzz
+  70%
+    opacity: 0.80
+@-webkit-keyframes blink
+  40%
+    opacity: 1
+  42%
+    opacity: 0.8
+  43%
+    opacity: 1
+  45%
+    opacity: 0.2
+  46%
+    opacity: 1
+
+@keyframes blink
+  40%
+    opacity: 1
+
+  42%
+    opacity: 0.8
+
+  43%
+    opacity: 1
+
+  45%
+    opacity: 0.2
+
+  46%
+    opacity: 1
+
+.grid
+  margin: 0 auto
+  position: fixed
+  bottom: 0
+  left: -50%
+  // background-color: rgba(20, 30, 40, 0.4)
+  background-image: linear-gradient(90deg, transparent 0%, transparent 85%, #ff003c 90%, transparent 95%), linear-gradient(0deg, transparent 0%, transparent 85%, #ff003c 90%, transparent 95%)
+  background-size: 20px 15px
+  width: 200vw
+  height: 60vh
+  transform: translate3D(0, 0, 0) perspective(200px) rotateX(45deg)
+  perspective-origin: top
+  animation-name: movement
+  animation-duration: 20s
+  animation-iteration-count: infinite
+  animation-timing-function: linear
+
+.grid:after
+  content: ""
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background: linear-gradient(to top, transparent, #2C313C)
+
+@keyframes movement
+  0%
+    background-position: 0% 0%
+  100% 
+    background-position: 0% 100%
