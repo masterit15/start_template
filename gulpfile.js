@@ -3,7 +3,6 @@ const preprocessor = 'sass',
       baseDir      = 'app',
       hostName     = 'http://localhost/'
 
-      
 const { src, dest, parallel, series, watch } = require('gulp');
 const browserSync  = require('browser-sync').create();
 const bssi         = require('browsersync-ssi');
@@ -18,6 +17,9 @@ const rename       = require('gulp-rename');
 const imagemin     = require('gulp-imagemin');
 const newer        = require('gulp-newer');
 const rsync        = require('gulp-rsync');
+const concat       = require('gulp-concat');
+const uglify       = require('gulp-uglify-es').default;
+const terser 			 = require('gulp-terser')
 const del          = require('del');
 
 
