@@ -1,6 +1,6 @@
 {
   "name": "start_template",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Стартовый шаблон для верстки",
   "main": "index.js",
   "author": "mastreit15",
@@ -31,5 +31,8 @@
     "gulp-sourcemaps": "^3.0.0",
     "sass": "^1.35.1",
     "webpack-stream": "^6.1.2"
+  },
+  "dependencies": {
+    "jquery": "^3.6.0"
   }
 }
